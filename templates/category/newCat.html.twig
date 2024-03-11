@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
+{% endblock %}
+
+{% block title %}Category{% endblock %}
+
+{% block body %}
+    {{ form_start(form) }}
+
+    <div class="flex justify-center">
+        {{ form_label(form.name, 'Nom de la catégorie', {'label_attr': {'class': 'mt-5 text-white'}}) }}
+        {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+    </div>
+    <button type="submit" class=" bg-blue-800 p-2 rounded-full mt-2">Save Category</button>
+    {{ form_end(form, {'render_rest': false}) }}
+
+{% endblock %}
